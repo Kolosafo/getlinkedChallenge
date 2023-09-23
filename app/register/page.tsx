@@ -10,8 +10,8 @@ import { registerUser } from "../APIs/register";
 function isMobileWidth() {
   if (typeof window !== "undefined") {
     return window.innerWidth < 750;
-  }else{
-    return false
+  } else {
+    return false;
   }
 }
 const Register = () => {
@@ -46,13 +46,16 @@ const Register = () => {
         category,
         privacy_poclicy_accepted: agreement,
       }).catch((e) => {
-        setFormError("THERE WAS AN ERROR REGISTERING YOUR ACCOUNT");
+        setFormError("THERE WAS AN ERROR CREATING YOUR ACCOUNT!");
         setLoading(false);
         return;
       });
-      console.log("RESPONSE", response);
-      onSetSuccess();
-      setLoading(false);
+      console.log("RESPONSE -->", response);
+      if (response) {
+        onSetSuccess();
+        setLoading(false);
+      }
+
       return;
     } else {
       setFormError("Please fill the form properly");
@@ -276,7 +279,7 @@ const Register = () => {
             </span>
           </div>
           {formError ? (
-            <span className="text-rose-500 font-semibold">{formError}</span>
+            <span className="text-red-500 font-semibold my-1">{formError}</span>
           ) : null}
           <GradientBtn
             text="Register Now"

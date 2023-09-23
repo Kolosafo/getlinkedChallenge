@@ -7,7 +7,7 @@ type Props = {
 };
 const Confirmation: FC<Props> = ({ setSuccess }) => {
   return (
-    <div className="h-full w-full fixed bg-[#140d27] opacity-90 p-1 z-50 px-[10%] flex items-center justify-center">
+    <div className="animation-in h-full w-full fixed bg-[#140d27] opacity-90 p-1 z-50 px-[10%] flex items-center justify-center">
       <div className="relative h-[80%] md:w-1/2 w-full border-2 border-[#D434FE] rounded-md flex flex-col px-[5%] py-5 justify-center items-center gap-2">
         <div className="flex items-center">
           <Image

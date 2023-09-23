@@ -169,10 +169,10 @@ const Contact = () => {
             value={message}
           ></textarea>
           {formError ? (
-            <span className="text-rose-500 font-semibold">{formError}</span>
+            <span className="text-red-600 font-semibold my-1">{formError}</span>
           ) : null}
           {success ? (
-            <span className="text-green-500 font-semibold">{success}</span>
+            <span className="text-green-500 font-semibold my-1">{success}</span>
           ) : null}
           <div className="self-center">
             <GradientBtn
@@ -264,7 +264,7 @@ const Contact = () => {
             value={message}
           ></textarea>
           {formError ? (
-            <span className="text-rose-500 font-semibold">{formError}</span>
+            <span className="text-red-500 font-semibold">{formError}</span>
           ) : null}
           {success ? (
             <span className="text-green-500 font-semibold">{success}</span>

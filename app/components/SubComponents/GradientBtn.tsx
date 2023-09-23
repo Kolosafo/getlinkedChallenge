@@ -16,7 +16,7 @@ const GradientBtn: FC<Props> = ({ text, customStyle, submit, loading }) => {
           : `lg:px-10 btnHoverEffect md:px-8 px-8 py-2 purpleGradientBg rounded-[3px] font-[montserrat] lg:text-lg md:text-sm text-xs font-normal ${
               customStyle ? customStyle : ""
             }`
-      } flex justify-center gap-4`}
+      } flex justify-center items-center gap-4`}
       // style={{}}
       onClick={() => (submit ? submit() : null)}
       disabled={loading ? true : false}
