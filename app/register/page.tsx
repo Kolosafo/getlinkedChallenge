@@ -8,7 +8,11 @@ import Confirmation from "../components/SubComponents/Confirmation";
 import { registerUser } from "../APIs/register";
 
 function isMobileWidth() {
-  return window.innerWidth < 750;
+  if (typeof window !== "undefined") {
+    return window.innerWidth < 750;
+  }else{
+    return false
+  }
 }
 const Register = () => {
   // OTHER STATES

@@ -8,7 +8,11 @@ import { contactApi } from "../APIs/contactApi";
 import Link from "next/link";
 
 function isMobileWidth() {
-  return window.innerWidth < 750;
+  if (typeof window !== "undefined") {
+    return window.innerWidth < 750;
+  } else {
+    return false;
+  }
 }
 const Contact = () => {
   // OTHER STATES

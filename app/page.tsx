@@ -15,7 +15,11 @@ import Footer from "./components/HomeSections/Footer";
 import MobileMenu from "./components/SubComponents/MobileMenu";
 
 function isMobileWidth() {
-  return window.innerWidth < 750;
+  if (typeof window !== "undefined") {
+    return window.innerWidth < 750;
+  } else {
+    return false;
+  }
 }
 
 export default function Home() {
