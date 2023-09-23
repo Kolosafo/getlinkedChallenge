@@ -4,6 +4,7 @@ import GradientBtn from "../SubComponents/GradientBtn";
 import { Unica_One } from "next/font/google";
 import PurpleLightBg from "../SubComponents/PurpleLightBg";
 import MobileMenu from "../SubComponents/MobileMenu";
+import Link from "next/link";
 const unica = Unica_One({
   weight: "400",
   preload: false,
@@ -11,12 +12,10 @@ const unica = Unica_One({
 const Hero = () => {
   return (
     <div className="lg:pl-32 animate-slide md:pl-10 px-10 relative h-full overflow-x-clip -my-[0.7rem] overflow-y-clip">
-     
       <div className="flex justify-between pr-16 pl-14 lg:flex-row flex-col lg:items-start md:items-end items-center style">
         <Image
           width={26}
           height={32}
-          priority
           src="/images/star.svg"
           alt="star"
           className="lg:order-1 lg:self-start md:self-start md:order-2 order-2 md:mt-0 lg:mt-8 sm:-mb-4 sm:mt-4 -mt-4 lg:w-7 md:w-5 sm:w-4 w-3 -ml-48 md:ml-0"
@@ -71,7 +70,10 @@ const Hero = () => {
             Participate in getlinked tech Hackathon 2023 stand a chance to win a
             Big prize
           </div>
-          <GradientBtn text="Register" customStyle="text-lg" />
+          <Link href="/register">
+            <GradientBtn text="Register" customStyle="text-lg" />
+          </Link>
+
           <div
             className={`font-normal relative flex md:gap-10 gap-4 md:mt-16 mt-8 md:text-5xl text-3xl md:mb-0 mb-[5rem]  ${unica.className}`}
           >
@@ -99,8 +101,6 @@ const Hero = () => {
         </div>
         <div className="basis-1/2 w-full relative h-full flex justify-center">
           <Image
-            unoptimized={true}
-            priority
             width={700}
             height={400}
             src="/images/metrix.svg"

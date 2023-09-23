@@ -27,7 +27,7 @@ const Navbar: FC<Props> = ({
       className={`lg:px-24 px-8 lg:pl-32 pl-8 md:pt-14 py-6 md:pb-6 lightBorderBottom flex justify-between backdrop-blur-xl relative z-10 ${additionalStyle}`}
     >
       <Link href="/">
-        <div className="font-[ClashDisplay] font-bold md:text-4xl text-base">
+        <div className="font-[ClashDisplay] font-bold md:text-4xl text-xl">
           get<span className="textPurple">linked</span>
         </div>
       </Link>
