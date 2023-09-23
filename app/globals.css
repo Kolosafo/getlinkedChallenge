@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Smythe&display=swap");
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 21, 14, 40;
+    --background-end-rgb: 20, 13, 39;
+  }
+}
+
+body {
+  font-family: "Montserrat", "ClashDisplay", sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+@font-face {
+  font-family: "ClashDisplay";
+  src: local("ClashDisplay"),
+    url(/fonts/ClashDisplay-Variable.ttf) format("truetype");
+}
+
+@layer components {
+  .purpleGradientBg {
+    background: linear-gradient(
+      to right,
+      rgb(254, 52, 185),
+      rgb(212, 52, 254),
+      rgb(144, 58, 255)
+    );
+  }
+  .purpleGradientText {
+    color: white;
+    background: -webkit-linear-gradient(
+      left,
+      rgb(144, 58, 255),
+      rgb(212, 52, 254),
+      rgb(254, 52, 185)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .lightBorderBottom {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .lightBorderTop {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .boldClash {
+    @apply font-[ClashDisplay] font-bold text-3xl;
+  }
+  .archLine {
+    width: 16rem;
+    height: 100px;
+    border: solid 5px #ff26b9;
+    border-color: #ff26b9 transparent transparent transparent;
+    border-radius: 230%/80px 100px 0 0;
+  }
+  .topUnset {
+    top: unset;
+  }
+
+  .leftUnset {
+    left: unset;
+  }
+  .customLightText {
+    @apply font-light text-sm;
+  }
+  .textPurple {
+    @apply text-[#D434FE];
+  }
+  .purpleLightBg {
+    height: 20rem;
+    width: 24rem;
+    filter: blur(150px);
+    background-color: rgb(144, 58, 255);
+    z-index: -10;
+    border-radius: 9999px;
+  }
+  .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .dropdown-open {
+    max-height: 200px;
+  }
+  .regNavButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    color: white;
+
+    background-color: transparent;
+
+    border: solid 3px;
+    border-radius: 6px;
+    border-image: linear-gradient(to left, #743ad5 0%, #d53a9d 100%);
+    border-image-slice: 1;
+
+    clip-path: polygon(
+      0 0,
+      12px 0,
+      12px 1px,
+      24px 1px,
+      24px 0,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .slowSpin {
+    animation: spin 60s linear infinite;
+  }
+  .slide-in-left-enter-active,
+  .slide-in-left-leave-active {
+    transition: all 0.5s;
+    transform: translateX(0);
+  }
+  .slide-in-left-enter,
+  .slide-in-left-leave-to {
+    opacity: 0;
+    transform: translateX(-100vw);
+    transition: all 0.5s;
+  }
+
+  /* BUTTON HOVER EFFECT */
+
+  .btnHoverEffect {
+    text-decoration: none;
+    padding: 40px 80px;
+    font-family: sans-serif;
+    background-color: #262626;
+    color: white;
+    font-size: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .btnHoverEffect:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+    transform: translateX(-100%) rotate(45deg);
+    transition: transform 0.3s;
+    /* z-index: -1; */
+  }
+
+  .btnHoverEffect:hover {
+    /* background-color: rgb(190, 5, 5); */
+  }
+
+  .btnHoverEffect:hover:before {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
